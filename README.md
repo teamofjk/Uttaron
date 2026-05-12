@@ -1,1 +1,304 @@
-# Uttaron
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realistic Happy Birthday Saikat Sir</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap');
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, #181c2e 0%, #0c0e18 100%);
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        /* Coaching Logo in Top Corner */
+        .coaching-logo {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            padding: 8px;
+            z-index: 100;
+            box-shadow: 0 5px 25px rgba(251, 197, 49, 0.5);
+            border: 3px solid #fbc531;
+            animation: slideInLogo 1.8s ease-out;
+        }
+
+        /* Main Card Structure (Realistic Glassmorphism) */
+        .birthday-card {
+            text-align: center;
+            z-index: 10;
+            padding: 60px 70px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 25px;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transform: translateY(50px) scale(0.9);
+            opacity: 0;
+            animation: slideUpFadePremium 1.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        }
+
+        .date-box {
+            font-size: 1.2rem;
+            color: #e1b12c;
+            letter-spacing: 4px;
+            margin-bottom: 25px;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        /* Circular Portrait Image Container */
+        .portrait-container {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 25px auto;
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(45deg, #fbc531, #e1b12c, #fbc531);
+            background-size: 200% 200%;
+            box-shadow: 0 0 35px rgba(251, 197, 49, 0.6);
+            animation: gradientMoveGlow 3s ease infinite;
+        }
+
+        .sir-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #181c2e;
+            box-sizing: border-box;
+            background-color: #2f3640;
+        }
+
+        /* Main Headline */
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5.5rem;
+            margin: 0;
+            color: #fbc531;
+            text-shadow: 0 0 25px rgba(251, 197, 49, 0.5);
+            animation: pulseTextGlow 2s infinite alternate;
+        }
+
+        /* Name and Title */
+        .name-and-title {
+            margin-top: 10px;
+            letter-spacing: 2.5px;
+        }
+
+        .sir-name {
+            font-size: 2.1rem;
+            font-weight: 700;
+            color: #f5f6fa;
+        }
+
+        .coaching-title {
+            font-size: 1.2rem;
+            color: #aeb9cc;
+            font-weight: 300;
+            margin-bottom: 35px;
+        }
+
+        /* Small Symbol/Icon */
+        .coaching-graphic {
+            width: 30px;
+            height: 30px;
+            margin: 0 auto 30px auto;
+            opacity: 0.7;
+        }
+
+        /* From Line */
+        .from-section {
+            margin-top: 30px;
+            font-size: 0.95rem;
+            color: #8c98ad;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            padding-top: 20px;
+        }
+
+        .from-name {
+            color: #e1b12c;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Animations */
+        @keyframes slideInLogo {
+            from { transform: translateX(-60px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideUpFadePremium {
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulseTextGlow {
+            0% { text-shadow: 0 0 10px rgba(251, 197, 49, 0.3); }
+            100% { text-shadow: 0 0 30px rgba(251, 197, 49, 0.8); }
+        }
+
+        @keyframes gradientMoveGlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Confetti Canvas */
+        #realistic-confetti {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Coaching Logo -->
+    <img src="logo.jpg" alt="Uttaron Logo" class="coaching-logo">
+
+    <!-- Confetti Canvas -->
+    <canvas id="realistic-confetti"></canvas>
+
+    <!-- Main realistic birthday wish page card -->
+    <div class="birthday-card">
+        <div class="date-box">13 MAY 2026</div>
+        
+        <!-- Sir's Photo Container -->
+        <div class="portrait-container">
+            <img src="sir-photo.jpg" alt="Saikat Sir" class="sir-img">
+        </div>
+
+        <h1>Happy Birthday</h1>
+        
+        <div class="name-and-title">
+            <div class="sir-name">SAIKAT BERA</div>
+            <div class="coaching-title">H.O.I, UTTARON COACHING</div>
+        </div>
+
+        <!-- Simple Coaching Symbol -->
+        <svg class="coaching-graphic" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="40" fill="none" stroke="#fbc531" stroke-width="6" opacity="0.8"/>
+            <path d="M50 25 L50 75 M25 50 L75 50" stroke="#fbc531" stroke-width="6" opacity="0.8"/>
+        </svg>
+
+        <div class="from-section">Best wishes from,<br><span class="from-name">SASHANKA NANDI</span></div>
+    </div>
+
+    <!-- Realistic Paper Confetti Javascript System -->
+    <script>
+        window.onload = function() {
+            const canvas = document.getElementById('realistic-confetti');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            let particleCount = 120;
+            let initialBurstDone = false;
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            const colors = ['#fbc531', '#e1b12c', '#ffffff', '#ff4d4d', '#32ff7e', '#18dcff'];
+
+            function createParticle() {
+                const x = Math.random() * canvas.width;
+                const y = Math.random() * -canvas.height;
+                const size = Math.random() * 8 + 6;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const vx = (Math.random() - 0.5) * 4;
+                const vy = Math.random() * 5 + 3;
+                const angle = Math.random() * Math.PI * 2;
+                const spin = Math.random() * 0.1 - 0.05;
+
+                return { x, y, size, color, vx, vy, angle, spin };
+            }
+
+            // Realistic initial burst animation logic
+            function initialBurst() {
+                for (let i = 0; i < 60; i++) {
+                    const x = canvas.width / 2;
+                    const y = canvas.height / 2;
+                    const size = Math.random() * 10 + 8;
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    const vx = (Math.random() - 0.5) * 20;
+                    const vy = (Math.random() - 0.5) * 20;
+                    const angle = Math.random() * Math.PI * 2;
+                    const spin = Math.random() * 0.1 - 0.05;
+
+                    particles.push({ x, y, size, color, vx, vy, angle, spin });
+                }
+                initialBurstDone = true;
+            }
+
+            function update() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // Start animation with a central burst
+                if (!initialBurstDone) {
+                    setTimeout(initialBurst, 500); 
+                    initialBurstDone = true; 
+                }
+
+                // Standard realistic confetti falling animation
+                if (particles.length < particleCount) {
+                    particles.push(createParticle());
+                }
+
+                particles.forEach((p, index) => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.angle += p.spin;
+
+                    // Gravity and air resistance logic
+                    if (initialBurstDone && p.vy < 0) { 
+                      p.vy *= 0.99; // Central burst particles slow down
+                    }
+
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate(p.angle);
+                    ctx.fillStyle = p.color;
+                    ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+                    ctx.restore();
+
+                    // Cleanup if off screen
+                    if (p.y > canvas.height + p.size) {
+                        particles[index] = createParticle();
+                    }
+                });
+
+                requestAnimationFrame(update);
+            }
+
+            update();
+        };
+    </script>
+</body>
+</html>
