@@ -21,7 +21,6 @@
             color: #ffffff;
         }
 
-        /* Main Card Structure */
         .birthday-card {
             text-align: center;
             z-index: 10;
@@ -229,3 +228,4 @@
     </script>
 </body>
 </html>
+1
