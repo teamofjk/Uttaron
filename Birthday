@@ -21,24 +21,27 @@
             color: #ffffff;
         }
 
-        /* Coaching Logo in Top Corner */
+        /* Coaching Logo in Top Corner (Auto-cropped from your poster) */
         .coaching-logo {
             position: absolute;
             top: 30px;
             left: 30px;
             width: 90px;
             height: 90px;
-            object-fit: contain;
+            /* Direct file link to your uploaded poster */
+            background-image: url('1000134435.jpg');
+            background-size: 380%;
+            background-position: center 3%;
+            background-repeat: no-repeat;
             background-color: rgba(255, 255, 255, 0.95);
             border-radius: 50%;
-            padding: 8px;
             z-index: 100;
             box-shadow: 0 5px 25px rgba(251, 197, 49, 0.5);
             border: 3px solid #fbc531;
             animation: slideInLogo 1.8s ease-out;
         }
 
-        /* Main Card Structure (Realistic Glassmorphism) */
+        /* Main Card Structure */
         .birthday-card {
             text-align: center;
             z-index: 10;
@@ -86,7 +89,6 @@
             background-color: #2f3640;
         }
 
-        /* Main Headline */
         h1 {
             font-family: 'Great Vibes', cursive;
             font-size: 5.5rem;
@@ -96,7 +98,6 @@
             animation: pulseTextGlow 2s infinite alternate;
         }
 
-        /* Name and Title */
         .name-and-title {
             margin-top: 10px;
             letter-spacing: 2.5px;
@@ -115,7 +116,6 @@
             margin-bottom: 35px;
         }
 
-        /* Small Symbol/Icon */
         .coaching-graphic {
             width: 30px;
             height: 30px;
@@ -123,7 +123,6 @@
             opacity: 0.7;
         }
 
-        /* From Line */
         .from-section {
             margin-top: 30px;
             font-size: 0.95rem;
@@ -140,7 +139,6 @@
             font-size: 1.1rem;
         }
 
-        /* Animations */
         @keyframes slideInLogo {
             from { transform: translateX(-60px); opacity: 0; }
             to { transform: translateX(0); opacity: 1; }
@@ -164,7 +162,6 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Confetti Canvas */
         #realistic-confetti {
             position: absolute;
             top: 0;
@@ -178,19 +175,15 @@
 </head>
 <body>
 
-    <!-- Coaching Logo -->
-    <img src="logo.jpg" alt="Uttaron Logo" class="coaching-logo">
+    <div class="coaching-logo" title="Uttaron"></div>
 
-    <!-- Confetti Canvas -->
     <canvas id="realistic-confetti"></canvas>
 
-    <!-- Main realistic birthday wish page card -->
     <div class="birthday-card">
         <div class="date-box">13 MAY 2026</div>
         
-        <!-- Sir's Photo Container -->
         <div class="portrait-container">
-            <img src="sir-photo.jpg" alt="Saikat Sir" class="sir-img">
+            <img src="1000134438.png" alt="Saikat Sir" class="sir-img">
         </div>
 
         <h1>Happy Birthday</h1>
@@ -200,7 +193,6 @@
             <div class="coaching-title">H.O.I, UTTARON COACHING</div>
         </div>
 
-        <!-- Simple Coaching Symbol -->
         <svg class="coaching-graphic" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="40" fill="none" stroke="#fbc531" stroke-width="6" opacity="0.8"/>
             <path d="M50 25 L50 75 M25 50 L75 50" stroke="#fbc531" stroke-width="6" opacity="0.8"/>
@@ -209,7 +201,6 @@
         <div class="from-section">Best wishes from,<br><span class="from-name">SASHANKA NANDI</span></div>
     </div>
 
-    <!-- Realistic Paper Confetti Javascript System -->
     <script>
         window.onload = function() {
             const canvas = document.getElementById('realistic-confetti');
@@ -240,7 +231,6 @@
                 return { x, y, size, color, vx, vy, angle, spin };
             }
 
-            // Realistic initial burst animation logic
             function initialBurst() {
                 for (let i = 0; i < 60; i++) {
                     const x = canvas.width / 2;
@@ -260,13 +250,11 @@
             function update() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-                // Start animation with a central burst
                 if (!initialBurstDone) {
                     setTimeout(initialBurst, 500); 
                     initialBurstDone = true; 
                 }
 
-                // Standard realistic confetti falling animation
                 if (particles.length < particleCount) {
                     particles.push(createParticle());
                 }
@@ -276,9 +264,8 @@
                     p.y += p.vy;
                     p.angle += p.spin;
 
-                    // Gravity and air resistance logic
                     if (initialBurstDone && p.vy < 0) { 
-                      p.vy *= 0.99; // Central burst particles slow down
+                      p.vy *= 0.99; 
                     }
 
                     ctx.save();
@@ -288,7 +275,6 @@
                     ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
                     ctx.restore();
 
-                    // Cleanup if off screen
                     if (p.y > canvas.height + p.size) {
                         particles[index] = createParticle();
                     }
@@ -302,4 +288,3 @@
     </script>
 </body>
 </html>
-
